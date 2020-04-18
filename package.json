@@ -8,8 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.5.8",
+    "@next/mdx": "^9.3.5",
     "next": "9.3.5",
+    "next-compose-plugins": "^2.2.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-masonry-component": "^6.2.1",
+    "styled-components": "^5.1.0",
+    "styled-system": "^5.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.0",
+    "@types/react": "^16.9.34",
+    "@types/styled-components": "^5.1.0",
+    "@types/styled-system": "^5.1.9",
+    "typescript": "^3.8.3"
   }
 }
