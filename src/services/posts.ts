@@ -1,5 +1,6 @@
 import glob from "glob";
 
+// @ts-ignore
 import {frontMatter} from "../pages/**/*.mdx";
 
 export interface BlogPost {
