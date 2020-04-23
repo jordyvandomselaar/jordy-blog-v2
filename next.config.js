@@ -1,6 +1,5 @@
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
-const frontmatter = require("remark-frontmatter")
 const withMdxEnhanced = require('next-mdx-enhanced')
 
 const nextConfig = {

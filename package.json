@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/react": "^1.5.9",
     "babel-plugin-import-glob-array": "^0.2.0",
     "glob": "^7.1.6",
     "next": "9.3.5",

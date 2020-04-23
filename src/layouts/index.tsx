@@ -1,10 +1,18 @@
 import React from "react";
+import {MDXProvider} from "@mdx-js/react"
+
+const components = {
+    pre: props => <div {...props} />,
+    code: props => <pre style={{color: 'tomato'}} {...props} />
+}
 
 const BlogLayout = frontMatter => ({children}) => {
     return (
-        <div>
-            {children}
-        </div>
+        <MDXProvider components={components}>
+            <div>
+                {children}
+            </div>
+        </MDXProvider>
     );
 };
 
