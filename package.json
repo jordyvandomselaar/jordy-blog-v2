@@ -8,17 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.5.8",
-    "@next/mdx": "^9.3.5",
+    "babel-plugin-import-glob-array": "^0.2.0",
+    "glob": "^7.1.6",
     "next": "9.3.5",
     "next-compose-plugins": "^2.2.0",
+    "next-mdx-enhanced": "^2.4.0",
+    "next-optimized-images": "^2.5.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-masonry-component": "^6.2.1",
+    "remark-frontmatter": "^2.0.0",
     "styled-components": "^5.1.0",
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "@types/glob": "^7.1.1",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/styled-components": "^5.1.0",

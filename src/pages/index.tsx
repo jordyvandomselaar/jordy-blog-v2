@@ -7,6 +7,7 @@ import Text from "../Text";
 import Image from "../Image";
 import {GetStaticProps} from "next";
 import {BlogPost, getAllBlogPosts} from "../services/posts";
+import Link from "next/link";
 
 export const getStaticProps: GetStaticProps = async context => {
     const blogPosts = getAllBlogPosts();
@@ -45,11 +46,15 @@ const Home: FunctionComponent<HomeProps> = ({blogPosts}) => {
                 </Box>
                 <Masonry>
                     {blogPosts.map(blogPost => (
-                        <Box width="300px" mx={3}>
-                            <PostCard title={blogPost.title}
-                                      intro={blogPost.intro}
-                                      image={blogPost.image}
-                                      bg={blogPost.imageColor}/>
+                        <Box width="300px" mx={3} key={blogPost.title}>
+                            <Link href={blogPost.url}>
+                                <a href={blogPost.url}>
+                                    <PostCard title={blogPost.title}
+                                              intro={blogPost.intro}
+                                              image={blogPost.image}
+                                              bg={blogPost.imageColor}/>
+                                </a>
+                            </Link>
                         </Box>
                     ))}
                 </Masonry>
