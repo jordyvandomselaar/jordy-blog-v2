@@ -42,7 +42,7 @@ const BlogLayout = frontMatter => ({children}) => {
                 </Box>
                 <Box px={[3, "25%"]}>
                     <Box position="relative">
-                        <Image src={headerImagePath} width="100%"/>
+                        <Image src={headerImagePath} width="100%" bg={frontMatter.imageColor}/>
                         <Box position="absolute" width="100%" height="100%" top="0" bg="rgba(0,0,0,.5)">
                             <Flex width="100%" height="100%" flexDirection="row" alignItems="center">
                                 <Box p="25px">

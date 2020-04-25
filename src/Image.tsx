@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {border, BorderProps, layout, LayoutProps, position, PositionProps} from "styled-system"
+import {border, BorderProps, color, ColorProps, layout, LayoutProps, position, PositionProps} from "styled-system"
 
-interface ImageProps extends PositionProps, LayoutProps, BorderProps {
+interface ImageProps extends PositionProps, LayoutProps, BorderProps, ColorProps {
 
 }
 
@@ -13,6 +13,7 @@ max-height: 100%;
 ${position}
 ${layout}
 ${border}
+${color}
 `
 
 
