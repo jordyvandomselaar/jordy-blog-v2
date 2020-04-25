@@ -1,13 +1,53 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import styled from "styled-components";
-import {typography, TypographyProps} from "styled-system"
+import {color, ColorProps, typography, TypographyProps, variant} from "styled-system"
 
-interface TextProps extends TypographyProps {
-
+interface TextProps extends TypographyProps, ColorProps {
+    variant?: "default" | "title" | "logo",
+    as?: React.ElementType
 }
 
-const Text = styled.p<TextProps>`
+const StyledText = styled.p<TextProps>`
+${variant({
+    variants: {
+        default: {
+            fontFamily: "primary",
+            color: "text"
+        },
+        title: {
+            fontFamily: "title",
+            color: "title"
+        },
+        logo: {
+            fontFamily: "logo",
+            color: "logo",
+            fontSize: "logo"
+        }
+    }
+})}
+
 ${typography}
+${color}
 `
+
+const titleElements = ["h1","h2","h3","h4","h5","h6"]
+
+const Text: FunctionComponent<TextProps> = ({variant, as, ...props}) => {
+    const _variant = (() => {
+        if(typeof variant === "string") {
+            return variant;
+        }
+
+        if(titleElements.includes(as?.toString())) {
+            return "title";
+        }
+
+        return "default";
+    })();
+
+    return (
+        <StyledText variant={_variant} as={as} {...props} />
+    );
+};
 
 export default Text;

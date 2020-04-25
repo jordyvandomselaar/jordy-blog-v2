@@ -22,7 +22,7 @@ const PostCard: FunctionComponent<PostCardProps> = ({image, intro, title, bg}) =
                 <CoverImage src={image} height="100%" width="100%" alt="Cover image"/>
             </Box>
             <Box px={10}>
-                <Text as="h3">{title}</Text>
+                <Text as="h3" variant="title">{title}</Text>
                 <Text>
                     {intro}
                 </Text>

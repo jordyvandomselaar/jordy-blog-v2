@@ -9,12 +9,20 @@ export interface BlogPost {
     imageColor?: string;
 }
 
+export const getRelativePathFromRootPath = (absolutePath: string) => {
+    return absolutePath.match(/.+\//)[0].replace(/.+?src\//, "").replace(/\/$/, "");
+}
+
 export const getAllBlogPosts = (): BlogPost[] => {
-  return frontMatter.map(fm => ({
-      title: fm.title ?? "",
-      imageColor: "#FFF",
-      image: "",
-      intro: "",
-      url: fm.__resourcePath.replace(/.+?pages/, '').replace(/\.mdx$/, '').replace(/\/index$/, '')
-  }))
+    return frontMatter.map(fm => {
+        const path  = getRelativePathFromRootPath(fm.__resourcePath);
+
+        return ({
+            title: fm.title ?? "",
+            imageColor: fm.imageColor ?? "#FFF",
+            image: fm.image ? require(`../${path}/${fm.image}`) : "",
+            intro: "",
+            url: fm.__resourcePath.replace(/.+?pages/, '').replace(/\.mdx$/, '').replace(/\/index$/, '')
+        });
+    })
 }
