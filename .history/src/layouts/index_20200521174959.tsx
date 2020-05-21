@@ -1,14 +1,13 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
-import Text from "../components/Text";
-import { OrderedList, UnOrderedList, ListItem } from "../components/List";
-import Box from "../components/Box";
+import Text from "../Text";
+import { OrderedList, UnOrderedList, ListItem } from "../List";
+import Box from "../Box";
 import Link from "next/link";
-import CodeBlock from "../components/CodeBlock";
+import CodeBlock from "../CodeBlock";
 import { getRelativePathFromRootPath } from "../services/posts";
-import Image from "../components/Image";
-import Flex from "../components/Flex";
-import Tip from "../components/Tip";
+import Image from "../Image";
+import Flex from "../Flex";
 import Layout from "./Layout";
 
 const components = {
@@ -16,7 +15,6 @@ const components = {
     // @ts-ignore
     code: ({ children, ...props }) => <CodeBlock code={children} {...props} />,
     p: Text,
-    Text: Text,
     h1: props => <Text as="h1" {...props} />,
     h2: props => <Text as="h2" {...props} />,
     h3: props => <Text as="h3" {...props} />,
@@ -25,10 +23,7 @@ const components = {
     h6: props => <Text as="h6" {...props} />,
     ul: UnOrderedList,
     ol: OrderedList,
-    li: ListItem,
-    Image: Image,
-    Link: Link,
-    Tip: Tip
+    li: ListItem
 };
 
 const BlogLayout = (frontMatter) => ({ children }) => {

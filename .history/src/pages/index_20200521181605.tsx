@@ -13,6 +13,8 @@ import Layout from "../layouts/Layout";
 export const getStaticProps: GetStaticProps = async context => {
     const blogPosts = getAllBlogPosts();
 
+    console.log(blogPosts);
+
     return {
         props: {
             blogPosts

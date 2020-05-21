@@ -1,10 +1,10 @@
 import React, {FunctionComponent} from "react";
-import Box from "../components/Box";
-import Flex from "../components/Flex";
-import PostCard from "../components/PostCard";
+import Box from "../Box";
+import Flex from "../Flex";
+import PostCard from "../PostCard";
 import Masonry from "react-masonry-component";
-import Text from "../components/Text";
-import Image from "../components/Image";
+import Text from "../Text";
+import Image from "../Image";
 import {GetStaticProps} from "next";
 import {BlogPost, getAllBlogPosts} from "../services/posts";
 import Link from "next/link";

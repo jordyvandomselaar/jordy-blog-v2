@@ -8,7 +8,6 @@ import CodeBlock from "../components/CodeBlock";
 import { getRelativePathFromRootPath } from "../services/posts";
 import Image from "../components/Image";
 import Flex from "../components/Flex";
-import Tip from "../components/Tip";
 import Layout from "./Layout";
 
 const components = {
@@ -16,19 +15,16 @@ const components = {
     // @ts-ignore
     code: ({ children, ...props }) => <CodeBlock code={children} {...props} />,
     p: Text,
-    Text: Text,
     h1: props => <Text as="h1" {...props} />,
     h2: props => <Text as="h2" {...props} />,
     h3: props => <Text as="h3" {...props} />,
     h4: props => <Text as="h4" {...props} />,
     h5: props => <Text as="h5" {...props} />,
     h6: props => <Text as="h6" {...props} />,
+    Text: console.log,
     ul: UnOrderedList,
     ol: OrderedList,
-    li: ListItem,
-    Image: Image,
-    Link: Link,
-    Tip: Tip
+    li: ListItem
 };
 
 const BlogLayout = (frontMatter) => ({ children }) => {

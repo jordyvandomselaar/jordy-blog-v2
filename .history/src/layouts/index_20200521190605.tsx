@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import Text from "../components/Text";
-import { OrderedList, UnOrderedList, ListItem } from "../components/List";
+import { OrderedList, UnOrderedList, ListItem } from "../components/";
 import Box from "../components/Box";
 import Link from "next/link";
 import CodeBlock from "../components/CodeBlock";

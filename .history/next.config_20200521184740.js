@@ -2,6 +2,7 @@ const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 const withMdxEnhanced = require("next-mdx-enhanced");
 const withFonts = require("next-fonts");
+const images = require("remark-images");
 
 const nextConfig = {
     pageExtensions: ["js", "jsx", "mdx", "tsx"],
@@ -11,7 +12,7 @@ const mdxEnhancedConfig = {
     layoutPath: "src/layouts",
     defaultLayout: true,
     fileExtensions: ["mdx"],
-    remarkPlugins: [],
+    remarkPlugins: [images],
     rehypePlugins: [],
     extendFrontMatter: {
         process: (mdxContent, frontMatter) => {},

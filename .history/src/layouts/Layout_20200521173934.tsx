@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
-import Box from "../components/Box";
-import Text from "../components/Text";
+import Box from "../Box";
+import Text from "../Text";
 import Link from "next/link";
 import styled from "styled-components";
-import Flex from "../components/Flex";
+import Flex from "../Flex";
 
 export interface LayoutProps {}
 

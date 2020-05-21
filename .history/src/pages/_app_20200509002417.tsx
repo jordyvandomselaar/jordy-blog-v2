@@ -14,8 +14,7 @@ const theme = {
         text: "#000",
         title: "#000",
         logo: "#000",
-        list: "#000",
-        primary: "#000"
+        list: "#000"
     },
     fontSizes: []
 }

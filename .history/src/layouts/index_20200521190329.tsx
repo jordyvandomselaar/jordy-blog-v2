@@ -8,7 +8,6 @@ import CodeBlock from "../components/CodeBlock";
 import { getRelativePathFromRootPath } from "../services/posts";
 import Image from "../components/Image";
 import Flex from "../components/Flex";
-import Tip from "../components/Tip";
 import Layout from "./Layout";
 
 const components = {
@@ -26,9 +25,7 @@ const components = {
     ul: UnOrderedList,
     ol: OrderedList,
     li: ListItem,
-    Image: Image,
-    Link: Link,
-    Tip: Tip
+    Image: Image
 };
 
 const BlogLayout = (frontMatter) => ({ children }) => {
