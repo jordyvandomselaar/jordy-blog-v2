@@ -1,26 +1,54 @@
-import React, {FunctionComponent} from "react";
-import Highlight, {defaultProps, Language} from "prism-react-renderer"
+import React, { FunctionComponent } from "react";
+import Highlight, { defaultProps, Language } from "prism-react-renderer";
+import styled from "styled-components";
 
-export interface CodeBlockProps extends React.FunctionComponent{
+export interface CodeBlockProps extends React.FunctionComponent {
     code: string;
     className: string;
 }
 
-const CodeBlock: FunctionComponent<CodeBlockProps> = ({code, className, ...props}) => {
-    const language = className?.replace(/language-/, '') as Language;
+const LineNumber = styled.span`
+    user-select: none;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 1.2em;
+    user-select: none;
+    opacity: 0.5;
+    text-align: center;
+    position: relative;
+`;
 
+const CodeBlock: FunctionComponent<CodeBlockProps> = ({
+    code,
+    className,
+    ...props
+}) => {
+    const language = className?.replace(/language-/, "") as Language;
+    console.log(code)
     return (
-        <Highlight {...defaultProps} code={code} language={language} {...props}>
-            {({className, style, tokens, getLineProps, getTokenProps}) => (
-                <pre className={className} style={{...style, padding: '20px', overflow: "auto"}}>
-          {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({line, key: i})}>
-                  {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({token, key})} />
-                  ))}
-              </div>
-          ))}
-        </pre>
+        <Highlight {...defaultProps} code={code.trim()} language={language} {...props}>
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <pre
+                    className={className}
+                    style={{ ...style, padding: "20px", overflow: "auto" }}
+                >
+                    {tokens.map((line, i) => {
+                        const lineProps = getLineProps({ line, key: i });
+
+                        return (
+                            <div key={i} {...lineProps}>
+                                <LineNumber>{i + 1}</LineNumber>
+                                {line.map((token, key) => (
+                                    <span
+                                        key={key}
+                                        {...getTokenProps({ token, key })}
+                                    />
+                                ))}
+                            </div>
+                        );
+                    })}
+                </pre>
             )}
         </Highlight>
     );
