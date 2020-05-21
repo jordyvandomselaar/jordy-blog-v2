@@ -10,12 +10,12 @@ const theme = {
         logo: "Arvo"
     },
     colors: {
-        background: "#FFF",
-        text: "#000",
-        title: "#000",
-        logo: "#000",
-        list: "#000",
-        primary: "#000"
+        background: "rgb(27,30,43)",
+        text: "rgb(181, 187, 216)",
+        title: "rgb(181, 187, 216)",
+        logo: "rgb(181, 187, 216)",
+        list: "rgb(181, 187, 216)",
+        primary: "rgb(27,30,43)"
     },
     fontSizes: []
 }

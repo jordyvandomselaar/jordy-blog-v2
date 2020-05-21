@@ -9,7 +9,7 @@ import {
 } from "styled-system";
 
 interface TextProps extends TypographyProps, ColorProps {
-    variant?: "default" | "title" | "logo";
+    variant?: "default" | "title" | "logo" | "link";
     as?: React.ElementType;
     [key: string]: any
 }
@@ -20,7 +20,15 @@ ${variant({
         default: {
             fontFamily: "primary",
             color: "text",
-            lineHeight: 1.5
+            lineHeight: 1.5,
+            wordBreak: "break-word"
+        },
+        link: {
+            fontFamily: "primary",
+            color: "text",
+            lineHeight: 1.5,
+            textDecoration: "none",
+            wordBreak: "break-word"
         },
         title: {
             fontFamily: "title",

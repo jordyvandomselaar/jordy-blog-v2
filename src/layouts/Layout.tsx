@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    background: ${(props) => props.theme.background};
+    background: ${(props) => props.theme.colors.background};
     overflow: auto;
 
     @font-face {

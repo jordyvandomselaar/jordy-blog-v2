@@ -23,6 +23,7 @@ const components = {
     h4: props => <Text as="h4" {...props} />,
     h5: props => <Text as="h5" {...props} />,
     h6: props => <Text as="h6" {...props} />,
+    a: props => <Text as="a" variant="link" {...props} />,
     ul: UnOrderedList,
     ol: OrderedList,
     li: ListItem,

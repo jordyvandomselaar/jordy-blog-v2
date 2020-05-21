@@ -4,8 +4,8 @@ import React from "react";
 import Text from "./Text"
 
 const Wrapper = styled.div`
-    background-color: ${props => lighten(.45, props.theme.colors.primary)};
-    border-left: 10px solid ${props => props.theme.colors.primary};
+    background-color: ${props => lighten(.1, props.theme.colors.primary)};
+    border-left: 10px solid ${props => lighten(.05, props.theme.colors.primary)};
     padding: 20px;
     margin: 30px 0;
 

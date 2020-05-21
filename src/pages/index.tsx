@@ -46,12 +46,12 @@ const Home: FunctionComponent<HomeProps> = ({blogPosts}) => {
                         {blogPosts.map(blogPost => (
                             <Box width="300px" mx={3} key={blogPost.title}>
                                 <Link href={blogPost.url}>
-                                    <a href={blogPost.url}>
+                                    <Text as="a" variant="link" href={blogPost.url}>
                                         <PostCard title={blogPost.title}
                                                   intro={blogPost.intro}
                                                   image={blogPost.image}
                                                   bg={blogPost.imageColor}/>
-                                    </a>
+                                    </Text>
                                 </Link>
                             </Box>
                         ))}
