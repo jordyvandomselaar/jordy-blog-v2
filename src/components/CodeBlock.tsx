@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import styled from "styled-components";
+import theme from "prism-react-renderer/themes/palenight"
 
 export interface CodeBlockProps extends React.FunctionComponent {
     code: string;
@@ -25,13 +26,12 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
     ...props
 }) => {
     const language = className?.replace(/language-/, "") as Language;
-    console.log(code)
     return (
-        <Highlight {...defaultProps} code={code.trim()} language={language} {...props}>
+        <Highlight {...defaultProps} theme={theme} code={code.trim()} language={language} {...props}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre
                     className={className}
-                    style={{ ...style, padding: "20px", overflow: "auto" }}
+                    style={{ ...style, padding: "20px", overflow: "auto", borderRadius: "10px"}}
                 >
                     {tokens.map((line, i) => {
                         const lineProps = getLineProps({ line, key: i });

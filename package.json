@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^1.6.4",
+    "@styled-system/theme-get": "^5.1.2",
     "babel-plugin-import-glob-array": "^0.2.0",
     "glob": "^7.1.6",
     "next": "^9.4.2",
@@ -33,6 +34,7 @@
     "@types/react": "^16.9.34",
     "@types/styled-components": "^5.1.0",
     "@types/styled-system": "^5.1.9",
+    "@types/styled-system__theme-get": "^5.0.0",
     "typescript": "^3.8.3"
   }
 }

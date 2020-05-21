@@ -6,16 +6,19 @@ import {
     typography,
     TypographyProps,
     variant,
+    get
 } from "styled-system";
+import { darken, lighten } from "polished";
+import {themeGet} from "@styled-system/theme-get"
 
 interface TextProps extends TypographyProps, ColorProps {
-    variant?: "default" | "title" | "logo" | "link";
+    variant?: "default" | "title" | "logo" | "link" | "code";
     as?: React.ElementType;
     [key: string]: any
 }
 
 const StyledText = styled.p<TextProps>`
-${variant({
+${props => variant({
     variants: {
         default: {
             fontFamily: "primary",
@@ -30,9 +33,35 @@ ${variant({
             textDecoration: "none",
             wordBreak: "break-word"
         },
-        title: {
+        h1: {
             fontFamily: "title",
             color: "title",
+            fontSize: "3rem"
+        },
+        h2: {
+            fontFamily: "title",
+            color: "title",
+            fontSize: "2.5rem"
+        },
+        h3: {
+            fontFamily: "title",
+            color: "title",
+            fontSize: "2rem"
+        },
+        h4: {
+            fontFamily: "title",
+            color: "title",
+            fontSize: "1.5rem"
+        },
+        h5: {
+            fontFamily: "title",
+            color: "title",
+            fontSize: "1.25rem"
+        },
+        h6: {
+            fontFamily: "title",
+            color: "title",
+            fontSize: "1.1rem"
         },
         logo: {
             fontFamily: "logo",
@@ -40,6 +69,13 @@ ${variant({
             fontSize: "logo",
             textDecoration: "none",
         },
+        code: {
+            fontFamily: "monospace",
+            color: "text",
+            backgroundColor: lighten(.2, themeGet("colors.background")(props)),
+            lineHeight: 1.5,
+            fontSize: "1.1rem"
+        }
     },
 })}
 
@@ -47,22 +83,8 @@ ${typography}
 ${color}
 `;
 
-const titleElements = ["h1", "h2", "h3", "h4", "h5", "h6"];
-
-const Text: ForwardRefExoticComponent<TextProps> = forwardRef(({ variant, as, ...props }, ref) => {
-    const _variant = (() => {
-        if (typeof variant === "string") {
-            return variant;
-        }
-
-        if (titleElements.includes(as?.toString())) {
-            return "title";
-        }
-
-        return "default";
-    })();
-
-    return <StyledText ref={ref} variant={_variant} as={as} {...props} />;
+const Text: ForwardRefExoticComponent<TextProps> = forwardRef(({ variant = "default", as, ...props }, ref) => {
+    return <StyledText ref={ref} variant={variant} as={as} {...props} />;
 });
 
 export default Text;

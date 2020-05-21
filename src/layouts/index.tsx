@@ -10,6 +10,7 @@ import Image from "../components/Image";
 import Flex from "../components/Flex";
 import Tip from "../components/Tip";
 import Layout from "./Layout";
+import Code from "../components/Code";
 
 const components = {
     pre: (props) => <div {...props} />,
@@ -17,19 +18,20 @@ const components = {
     code: ({ children, ...props }) => <CodeBlock code={children} {...props} />,
     p: Text,
     Text: Text,
-    h1: props => <Text as="h1" {...props} />,
-    h2: props => <Text as="h2" {...props} />,
-    h3: props => <Text as="h3" {...props} />,
-    h4: props => <Text as="h4" {...props} />,
-    h5: props => <Text as="h5" {...props} />,
-    h6: props => <Text as="h6" {...props} />,
+    h1: props => <Text as="h1" variant="h1" {...props} />,
+    h2: props => <Text as="h2" variant="h2" {...props} />,
+    h3: props => <Text as="h3" variant="h3" {...props} />,
+    h4: props => <Text as="h4" variant="h4" {...props} />,
+    h5: props => <Text as="h5" variant="h5" {...props} />,
+    h6: props => <Text as="h6" variant="h6" {...props} />,
     a: props => <Text as="a" variant="link" {...props} />,
+    inlineCode: props => <Text as="code" variant="code" {...props} />,
     ul: UnOrderedList,
     ol: OrderedList,
     li: ListItem,
     Image: Image,
     Link: Link,
-    Tip: Tip
+    Tip: Tip,
 };
 
 const BlogLayout = (frontMatter) => ({ children }) => {
@@ -39,8 +41,8 @@ const BlogLayout = (frontMatter) => ({ children }) => {
     return (
         <MDXProvider components={components}>
             <Layout>
-                <Box px={[3, "30%"]}>
-                    <Box position="relative">
+                <Box px={[3, "25%"]}>
+                    <Box position="relative" mb="100px">
                         <Image
                             src={headerImagePath}
                             width="100%"

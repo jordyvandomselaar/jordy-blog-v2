@@ -20,7 +20,14 @@ const Wrapper = styled.div`
         font-family: Arvo;
         src: url(${require("../assets/fonts/Arvo/Arvo-Regular.ttf")})
             format("truetype");
-        font-weight: 400;
+        font-weight: normal;
+    }
+
+    @font-face {
+        font-family: Arvo;
+        src: url(${require("../assets/fonts/Arvo/Arvo-Bold.ttf")})
+            format("truetype");
+        font-weight: bold;
     }
 `;
 
