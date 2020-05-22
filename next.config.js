@@ -14,7 +14,9 @@ const mdxEnhancedConfig = {
     remarkPlugins: [
         [require("remark-toc"), {tight: true}]
     ],
-    rehypePlugins: [],
+    rehypePlugins: [
+        require("rehype-slug")
+    ],
     extendFrontMatter: {
         process: (mdxContent, frontMatter) => {},
         phase: "prebuild|loader|both",
