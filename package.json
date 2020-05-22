@@ -25,6 +25,7 @@
     "react-masonry-component": "^6.2.1",
     "rehype-autolink-headings": "^3.0.0",
     "remark-frontmatter": "^2.0.0",
+    "remark-toc": "^7.0.0",
     "styled-components": "^5.1.0",
     "styled-system": "^5.1.5"
   },

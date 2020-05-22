@@ -11,10 +11,10 @@ const mdxEnhancedConfig = {
     layoutPath: "src/layouts",
     defaultLayout: true,
     fileExtensions: ["mdx"],
-    remarkPlugins: [],
-    rehypePlugins: [
-        require("rehype-autolink-headings")
+    remarkPlugins: [
+        [require("remark-toc"), {tight: true}]
     ],
+    rehypePlugins: [],
     extendFrontMatter: {
         process: (mdxContent, frontMatter) => {},
         phase: "prebuild|loader|both",

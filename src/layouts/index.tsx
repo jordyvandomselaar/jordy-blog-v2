@@ -29,7 +29,7 @@ const components = {
     inlineCode: props => <Text as="code" variant="code" {...props} />,
     ul: UnOrderedList,
     ol: OrderedList,
-    li: ListItem,
+    li: props => <ListItem {...props} pt={3} />,
     Image: Image,
     Link: Link,
     Tip: Tip,
