@@ -11,6 +11,7 @@ import Flex from "../components/Flex";
 import Tip from "../components/Tip";
 import Layout from "./Layout";
 import Code from "../components/Code";
+import Head from "next/head";
 
 const components = {
     pre: (props) => <div {...props} />,
@@ -40,9 +41,14 @@ const BlogLayout = (frontMatter) => ({ children }) => {
 
     return (
         <MDXProvider components={components}>
+            <Head>
+            <title>jordy.app | {frontMatter.title}</title>
+            </Head>
             <Layout>
-                <Box px={[3, "25%"]}>
-                    <Box position="relative" mb="100px">
+                <Layout.SiteName />
+                <Layout.Content>
+                <Box variant="container">
+                    <Box position="relative" mb="75px" mt={["50px"]}>
                         <Image
                             src={headerImagePath}
                             width="100%"
@@ -71,6 +77,7 @@ const BlogLayout = (frontMatter) => ({ children }) => {
                     </Box>
                     <Box>{children}</Box>
                 </Box>
+                </Layout.Content>
             </Layout>
         </MDXProvider>
     );

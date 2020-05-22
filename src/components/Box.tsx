@@ -11,11 +11,12 @@ import {
     PositionProps, shadow,
     ShadowProps,
     space,
-    SpaceProps
+    SpaceProps,
+    variant
 } from "styled-system"
 
 interface BoxProps extends PositionProps, ColorProps, LayoutProps, SpaceProps, ShadowProps, BorderProps, BackgroundProps{
-
+    variant?: "container"
 }
 
 const Box = styled.div<BoxProps>`
@@ -26,6 +27,15 @@ ${space}
 ${shadow}
 ${border}
 ${background}
+
+${variant({
+    variants: {
+        container: {
+            paddingRight: [3, "25%"],
+            paddingLeft: [3, "25%"]
+        }
+    }
+})}
 `
 
 

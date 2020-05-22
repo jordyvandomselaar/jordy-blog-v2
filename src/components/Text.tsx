@@ -12,7 +12,7 @@ import { darken, lighten } from "polished";
 import {themeGet} from "@styled-system/theme-get"
 
 interface TextProps extends TypographyProps, ColorProps {
-    variant?: "default" | "title" | "logo" | "link" | "code";
+    variant?: "default" | "title" | "logo" | "link" | "code" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     as?: React.ElementType;
     [key: string]: any
 }
@@ -30,7 +30,6 @@ ${props => variant({
             fontFamily: "primary",
             color: "text",
             lineHeight: 1.5,
-            textDecoration: "none",
             wordBreak: "break-word"
         },
         h1: {

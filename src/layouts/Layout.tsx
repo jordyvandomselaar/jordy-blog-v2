@@ -1,9 +1,11 @@
-import React, { FunctionComponent } from "react";
-import Box from "../components/Box";
+import React, { FC } from "react";
+import Grid from "../components/Grid";
 import Text from "../components/Text";
+import Flex from "../components/Flex";
+import Box from "../components/Box";
+import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
-import Flex from "../components/Flex";
 
 export interface LayoutProps {}
 
@@ -31,21 +33,49 @@ const Wrapper = styled.div`
     }
 `;
 
-const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
+const Layout: FC<LayoutProps> & {
+    SiteName: FC;
+    Content: FC;
+} = ({ children }) => {
     return (
         <Wrapper>
-            <Box pt={4} pb={5}>
-                <Flex flexDirection="row" justifyContent="center">
-                    <Link href="/">
-                        <Text variant="logo" as="a" href="/" textAlign="center">
-                            Jordy.app
-                        </Text>
-                    </Link>
-                </Flex>
+            <Box p={3}>
+            <Grid
+                height="100%"
+                gridTemplateColumns="repeat(3, 1fr)"
+                gridTemplateRows={[, "63px 63px 1fr"]}
+                display="grid"
+                gridAutoRows={["min-content"]}
+            >
+                {children}
+            </Grid>
             </Box>
-            {children}
         </Wrapper>
     );
 };
+
+Layout.SiteName = () => (
+    <Grid gridColumn="1/span 3" gridRow={1}>
+        <Box height="100%" mb={[4, 0]} mt={3}>
+            <Flex
+                flexDirection="row"
+                alignItems="center"
+                justifyContent="center"
+            >
+                <Link href="/">
+                    <Text as="a" href="/" variant="logo">
+                        Jordy.app
+                    </Text>
+                </Link>
+            </Flex>
+        </Box>
+    </Grid>
+);
+
+Layout.Content = ({ children }) => (
+    <Grid gridRow={2} gridColumn="1 / span 3">
+        {children}
+    </Grid>
+);
 
 export default Layout;
