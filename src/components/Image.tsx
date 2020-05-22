@@ -9,6 +9,7 @@ interface ImageProps extends PositionProps, LayoutProps, BorderProps, ColorProps
 const Image = styled.img<ImageProps>`
 max-width: 100%;
 max-height: 100%;
+border-radius: 10px;
 
 ${position}
 ${layout}
