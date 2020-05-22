@@ -15,7 +15,8 @@ const mdxEnhancedConfig = {
         [require("remark-toc"), {tight: true}]
     ],
     rehypePlugins: [
-        require("rehype-slug")
+        require("rehype-slug"),
+        [require("rehype-autolink-headings"), {behavior: "wrap"}],
     ],
     extendFrontMatter: {
         process: (mdxContent, frontMatter) => {},
