@@ -11,10 +11,10 @@ const theme = {
     },
     colors: {
         background: "rgb(27,30,43)",
-        text: "rgb(199, 205, 233)",
-        title: "rgb(199, 205, 233)",
-        logo: "rgb(199, 205, 233)",
-        list: "rgb(199, 205, 233)",
+        text: "rgb(214, 222, 255)",
+        title: "rgb(214, 222, 255)",
+        logo: "rgb(214, 222, 255)",
+        list: "rgb(214, 222, 255)",
         primary: "rgb(27,30,43)"
     },
     fontSizes: []

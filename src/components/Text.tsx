@@ -67,6 +67,7 @@ ${props => variant({
             color: "logo",
             fontSize: "logo",
             textDecoration: "none",
+            fontWeight: "bold"
         },
         code: {
             fontFamily: "monospace",
