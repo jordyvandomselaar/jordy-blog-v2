@@ -10,7 +10,7 @@ import Image from "../components/Image";
 import Flex from "../components/Flex";
 import Tip from "../components/Tip";
 import Layout from "./Layout";
-import Head from "next/head";
+import Head from "next/head"; //
 
 const components = {
     pre: (props) => <div {...props} />,
