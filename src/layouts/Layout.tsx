@@ -101,6 +101,15 @@ Layout.Footer = ({ children }) => {
                     >
                         Github
                     </Text>
+                    <Box display="inline" px={2}><Text as="span">-</Text></Box>
+                    <Text
+                        as="a"
+                        variant="link"
+                        href="https://github.com/jordyvandomselaar/jordy-blog-v2"
+                        target="_blank"
+                    >
+                        Source Code
+                    </Text>
                 </Text>
                 </Flex>
             </Box>
