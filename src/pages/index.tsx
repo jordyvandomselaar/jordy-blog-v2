@@ -38,8 +38,8 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                 <Flex flexDirection="column">
                     <Box py={3} px={3}>
                         <Box px={3} mb={3} pb={5}>
-                            <Flex flexDirection="row" justifyContent="center">
-                                <Box width={100}>
+                            <Flex flexDirection="row" justifyContent="center" alignItems="center">
+                                <Box width={75}>
                                     <Image
                                         borderRadius="50%"
                                         src={require("../assets/images/jordy.jpeg")}

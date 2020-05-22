@@ -28,7 +28,7 @@ ${props => variant({
         },
         link: {
             fontFamily: "primary",
-            color: "text",
+            color: "link",
             lineHeight: 1.5,
             wordBreak: "break-word"
         },

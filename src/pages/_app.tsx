@@ -12,8 +12,9 @@ const theme = {
     colors: {
         background: "rgb(27,30,43)",
         text: "rgb(214, 222, 255)",
-        title: "rgb(214, 222, 255)",
-        logo: "rgb(214, 222, 255)",
+        title: "#C9FFE0",
+        link: "#C9FFE0",
+        logo: "#C9FFE0",
         list: "rgb(214, 222, 255)",
         primary: "rgb(27,30,43)"
     },

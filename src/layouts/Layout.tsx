@@ -44,7 +44,7 @@ const Layout: FC<LayoutProps> & {
             <Grid
                 height="100%"
                 gridTemplateColumns="repeat(3, 1fr)"
-                gridTemplateRows={[, "100px 1fr 62px"]}
+                gridTemplateRows="120px 1fr 62px"
                 display="grid"
                 gridAutoRows={["min-content"]}
             >
@@ -56,7 +56,7 @@ const Layout: FC<LayoutProps> & {
 
 Layout.SiteName = () => (
     <Grid gridColumn="1/span 3" gridRow={1}>
-        <Box height="100%" mb={4} mt={3}>
+        <Box height="100%" mt={4}>
             <Flex
                 flexDirection="row"
                 alignItems="center"
@@ -79,7 +79,6 @@ Layout.Content = ({ children }) => (
 );
 
 Layout.Footer = ({ children }) => {
-    console.log(themeGet("colors.background"));
     return (
         <Grid gridRow={3} gridColumn="1 / span 3">
             <Box width="100%" height="100%" variant="footer">
@@ -89,14 +88,16 @@ Layout.Footer = ({ children }) => {
                         as="a"
                         variant="link"
                         href="https://twitter.com/Jordy_vD_"
+                        target="_blank"
                     >
                         Twitter
                     </Text>
-                    <Text as="span"> - </Text>
+                    <Box display="inline" px={2}><Text as="span">-</Text></Box>
                     <Text
                         as="a"
                         variant="link"
                         href="https://github.com/jordyvandomselaar"
+                        target="_blank"
                     >
                         Github
                     </Text>
