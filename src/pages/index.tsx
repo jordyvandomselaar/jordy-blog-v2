@@ -76,6 +76,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                     </Box>
                 </Flex>
             </Layout.Content>
+            <Layout.Footer />
         </Layout>
         </>
     );

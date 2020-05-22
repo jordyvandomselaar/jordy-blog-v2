@@ -6,6 +6,7 @@ import Box from "../components/Box";
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 export interface LayoutProps {}
 
@@ -36,20 +37,19 @@ const Wrapper = styled.div`
 const Layout: FC<LayoutProps> & {
     SiteName: FC;
     Content: FC;
+    Footer: FC;
 } = ({ children }) => {
     return (
         <Wrapper>
-            <Box p={3}>
-                <Grid
-                    height="100%"
-                    gridTemplateColumns="repeat(3, 1fr)"
-                    gridTemplateRows={[, "100px 63px 1fr"]}
-                    display="grid"
-                    gridAutoRows={["min-content"]}
-                >
-                    {children}
-                </Grid>
-            </Box>
+            <Grid
+                height="100%"
+                gridTemplateColumns="repeat(3, 1fr)"
+                gridTemplateRows={[, "100px 1fr 62px"]}
+                display="grid"
+                gridAutoRows={["min-content"]}
+            >
+                {children}
+            </Grid>
         </Wrapper>
     );
 };
@@ -77,5 +77,34 @@ Layout.Content = ({ children }) => (
         {children}
     </Grid>
 );
+
+Layout.Footer = ({ children }) => {
+    console.log(themeGet("colors.background"));
+    return (
+        <Grid gridRow={3} gridColumn="1 / span 3">
+            <Box width="100%" height="100%" variant="footer">
+                <Flex flexDirection="row" justifyContent="center" alignItems="center" height="100%">
+                <Text>
+                    <Text
+                        as="a"
+                        variant="link"
+                        href="https://twitter.com/Jordy_vD_"
+                    >
+                        Twitter
+                    </Text>
+                    <Text as="span"> - </Text>
+                    <Text
+                        as="a"
+                        variant="link"
+                        href="https://github.com/jordyvandomselaar"
+                    >
+                        Github
+                    </Text>
+                </Text>
+                </Flex>
+            </Box>
+        </Grid>
+    );
+};
 
 export default Layout;
