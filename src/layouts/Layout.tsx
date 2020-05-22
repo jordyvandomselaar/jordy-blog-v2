@@ -40,15 +40,15 @@ const Layout: FC<LayoutProps> & {
     return (
         <Wrapper>
             <Box p={3}>
-            <Grid
-                height="100%"
-                gridTemplateColumns="repeat(3, 1fr)"
-                gridTemplateRows={[, "63px 63px 1fr"]}
-                display="grid"
-                gridAutoRows={["min-content"]}
-            >
-                {children}
-            </Grid>
+                <Grid
+                    height="100%"
+                    gridTemplateColumns="repeat(3, 1fr)"
+                    gridTemplateRows={[, "100px 63px 1fr"]}
+                    display="grid"
+                    gridAutoRows={["min-content"]}
+                >
+                    {children}
+                </Grid>
             </Box>
         </Wrapper>
     );
@@ -56,7 +56,7 @@ const Layout: FC<LayoutProps> & {
 
 Layout.SiteName = () => (
     <Grid gridColumn="1/span 3" gridRow={1}>
-        <Box height="100%" mb={[4, 0]} mt={3}>
+        <Box height="100%" mb={4} mt={3}>
             <Flex
                 flexDirection="row"
                 alignItems="center"
