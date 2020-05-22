@@ -10,7 +10,6 @@ import Image from "../components/Image";
 import Flex from "../components/Flex";
 import Tip from "../components/Tip";
 import Layout from "./Layout";
-import Code from "../components/Code";
 import Head from "next/head";
 
 const components = {
