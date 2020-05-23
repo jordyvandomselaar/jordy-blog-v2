@@ -35,7 +35,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
         <Layout>
             <Layout.SiteName />
             <Layout.Content>
-                <Flex flexDirection="column">
+                <Flex flexDirection="column" alignItems={["center", "unset"]}>
                     <Box py={3} px={3}>
                         <Box px={3} mb={3} pb={5}>
                             <Flex flexDirection="row" justifyContent="center" alignItems="center">
@@ -55,7 +55,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                         </Box>
                         <Masonry>
                             {blogPosts.map((blogPost) => (
-                                <Box width="300px" mx={3} mb={3} key={blogPost.title}>
+                                <Box width={["100%", "300px"]} ml={[0, 4]} mb={4} key={blogPost.title}>
                                     <Link href={blogPost.url}>
                                         <Text
                                             as="a"
