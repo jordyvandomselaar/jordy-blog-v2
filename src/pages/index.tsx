@@ -35,9 +35,10 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
         <Layout>
             <Layout.SiteName />
             <Layout.Content>
+                <Box pt={3}>
                 <Flex flexDirection="column" alignItems={["center", "unset"]}>
                     <Box py={3} px={3}>
-                        <Box px={3} mb={3} pb={5}>
+                        <Box  pb={[5,6]}>
                             <Flex flexDirection="row" justifyContent="center" alignItems="center">
                                 <Box width={75}>
                                     <Image
@@ -78,6 +79,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                         </Masonry>
                     </Box>
                 </Flex>
+                </Box>
             </Layout.Content>
             <Layout.Footer />
         </Layout>

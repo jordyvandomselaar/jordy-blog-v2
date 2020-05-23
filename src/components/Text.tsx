@@ -116,14 +116,11 @@ ${typography}
 ${color}
 ${textDecoration}
 
-${props => {
-    // @ts-ignore
-    return ["h1", "h2", "h3", "h4", "h5", "h6"].includes(props.as) && css`
+${props => (["h1", "h2", "h3", "h4", "h5", "h6"] as React.ElementType[]).includes(props.as) && css`
     a {
         text-decoration: none;
     }
-`
-}}
+`}
 `;
 
 const Text: ForwardRefExoticComponent<TextProps> = forwardRef(

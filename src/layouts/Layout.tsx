@@ -6,12 +6,13 @@ import Box from "../components/Box";
 import Head from "next/head";
 import Link from "next/link";
 import styled, { createGlobalStyle } from "styled-components";
-import { themeGet } from "@styled-system/theme-get";
-import { Theme } from "../theme";
 
 export interface LayoutProps {}
 
 const GlobalStyles = createGlobalStyle`
+    * {
+        box-sizing: border-box
+    }
     body {
         position: absolute;
         left: 0;
@@ -57,11 +58,11 @@ const Layout: FC<LayoutProps> & {
             <Grid
                 height="100%"
                 gridTemplateColumns="repeat(3, 1fr)"
-                gridTemplateRows="120px 1fr 62px"
+                gridTemplateRows="auto 1fr 62px"
                 display="grid"
                 gridAutoRows={["min-content"]}
             >
-                {children}
+                    {children}
             </Grid>
         </>
     );

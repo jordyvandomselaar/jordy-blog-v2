@@ -48,7 +48,7 @@ const BlogLayout = (frontMatter) => ({ children }) => {
             <Layout>
                 <Layout.SiteName />
                 <Layout.Content>
-                    <Box variant="container">
+                    <Box variant="container" pt={5}>
                         <Box position="relative" mb="50px">
                             <Image
                                 src={headerImagePath}
@@ -58,9 +58,10 @@ const BlogLayout = (frontMatter) => ({ children }) => {
                             <Box
                                 position="absolute"
                                 width="100%"
-                                height="100%"
+                                height="calc(100% - 4px)"
                                 top="0"
                                 bg="rgba(0,0,0,.5)"
+                                borderRadius="10px"
                             >
                                 <Flex
                                     width="100%"
