@@ -5,19 +5,31 @@ import Flex from "../components/Flex";
 import Box from "../components/Box";
 import Head from "next/head";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
+import { Theme } from "../theme";
 
 export interface LayoutProps {}
 
-const Wrapper = styled.div`
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: ${(props) => props.theme.colors.background};
-    overflow: auto;
+const GlobalStyles = createGlobalStyle`
+    body {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: ${(props) => props.theme.colors.background};
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+
+        #__next {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+
 
     @font-face {
         font-family: Arvo;
@@ -40,7 +52,8 @@ const Layout: FC<LayoutProps> & {
     Footer: FC;
 } = ({ children }) => {
     return (
-        <Wrapper>
+        <>
+            <GlobalStyles />
             <Grid
                 height="100%"
                 gridTemplateColumns="repeat(3, 1fr)"
@@ -50,7 +63,7 @@ const Layout: FC<LayoutProps> & {
             >
                 {children}
             </Grid>
-        </Wrapper>
+        </>
     );
 };
 
@@ -82,35 +95,44 @@ Layout.Footer = ({ children }) => {
     return (
         <Grid gridRow={3} gridColumn="1 / span 3">
             <Box width="100%" height="100%" variant="footer">
-                <Flex flexDirection="row" justifyContent="center" alignItems="center" height="100%">
-                <Text>
-                    <Text
-                        as="a"
-                        variant="link"
-                        href="https://twitter.com/Jordy_vD_"
-                        target="_blank"
-                    >
-                        Twitter
+                <Flex
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    height="100%"
+                >
+                    <Text>
+                        <Text
+                            as="a"
+                            variant="link"
+                            href="https://twitter.com/Jordy_vD_"
+                            target="_blank"
+                        >
+                            Twitter
+                        </Text>
+                        <Box display="inline" px={2}>
+                            <Text as="span">-</Text>
+                        </Box>
+                        <Text
+                            as="a"
+                            variant="link"
+                            href="https://github.com/jordyvandomselaar"
+                            target="_blank"
+                        >
+                            Github
+                        </Text>
+                        <Box display="inline" px={2}>
+                            <Text as="span">-</Text>
+                        </Box>
+                        <Text
+                            as="a"
+                            variant="link"
+                            href="https://github.com/jordyvandomselaar/jordy-blog-v2"
+                            target="_blank"
+                        >
+                            Source Code
+                        </Text>
                     </Text>
-                    <Box display="inline" px={2}><Text as="span">-</Text></Box>
-                    <Text
-                        as="a"
-                        variant="link"
-                        href="https://github.com/jordyvandomselaar"
-                        target="_blank"
-                    >
-                        Github
-                    </Text>
-                    <Box display="inline" px={2}><Text as="span">-</Text></Box>
-                    <Text
-                        as="a"
-                        variant="link"
-                        href="https://github.com/jordyvandomselaar/jordy-blog-v2"
-                        target="_blank"
-                    >
-                        Source Code
-                    </Text>
-                </Text>
                 </Flex>
             </Box>
         </Grid>
