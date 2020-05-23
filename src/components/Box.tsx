@@ -33,8 +33,9 @@ ${background}
 ${props => variant({
     variants: {
         container: {
-            paddingRight: [3, "25%"],
-            paddingLeft: [3, "25%"]
+            maxWidth: "700px",
+            margin: "0 auto",
+            px: [3, 0]
         },
         footer: {
             backgroundColor: darken(0.05, themeGet("colors.background")(props))

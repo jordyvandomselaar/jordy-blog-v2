@@ -7,6 +7,8 @@ export interface BlogPost {
     intro: string;
     image: string;
     imageColor?: string;
+    date: string;
+    readTime: string;
 }
 
 export const getRelativePathFromRootPath = (absolutePath: string) => {
@@ -14,7 +16,16 @@ export const getRelativePathFromRootPath = (absolutePath: string) => {
 }
 
 export const getAllBlogPosts = (): BlogPost[] => {
-    return frontMatter.map(fm => {
+    return frontMatter
+    .sort((a,b) => {
+        const aTime = (new Date(a.date)).getTime();
+        const bTime = (new Date(b.date)).getTime();
+
+        if(aTime === bTime) return 0;
+        if(aTime < bTime) return 1;
+        if(aTime > bTime) return -1;
+    })
+    .map(fm => {
         const path  = getRelativePathFromRootPath(fm.__resourcePath);
 
         return ({
@@ -22,7 +33,13 @@ export const getAllBlogPosts = (): BlogPost[] => {
             imageColor: fm.imageColor ?? "#FFF",
             image: fm.image ? require(`../${path}/${fm.image}`) : "",
             intro: "",
-            url: fm.__resourcePath.replace(/.+?pages/, '').replace(/\.mdx$/, '').replace(/\/index$/, '')
+            url: fm.__resourcePath.replace(/.+?pages/, '').replace(/\.mdx$/, '').replace(/\/index$/, ''),
+            readTime: fm.readingTime,
+            date: new Date(fm.date).toLocaleDateString(undefined, {
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+            })
         });
     })
 }

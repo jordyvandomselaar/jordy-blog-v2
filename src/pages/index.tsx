@@ -60,6 +60,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                                         <Text
                                             as="a"
                                             variant="link"
+                                            textDecoration="none"
                                             href={blogPost.url}
                                         >
                                             <PostCard
@@ -67,6 +68,8 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                                                 intro={blogPost.intro}
                                                 image={blogPost.image}
                                                 bg={blogPost.imageColor}
+                                                readTime={blogPost.readTime}
+                                                date={blogPost.date}
                                             />
                                         </Text>
                                     </Link>

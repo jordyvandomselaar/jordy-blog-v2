@@ -23,6 +23,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-masonry-component": "^6.2.1",
+    "reading-time": "^1.2.0",
     "rehype-autolink-headings": "^3.0.0",
     "rehype-slug": "^3.0.0",
     "remark-frontmatter": "^2.0.0",

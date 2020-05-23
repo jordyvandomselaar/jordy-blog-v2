@@ -24,7 +24,9 @@ const components = {
     h4: (props) => <Text as="h4" variant="h4" {...props} />,
     h5: (props) => <Text as="h5" variant="h5" {...props} />,
     h6: (props) => <Text as="h6" variant="h6" {...props} />,
-    a: (props) => <Text as="a" variant="link" {...props} />,
+    a: (props) => (
+        <Text as="a" variant="link" textDecoration="underline" {...props} />
+    ),
     inlineCode: (props) => <Text as="code" variant="code" {...props} />,
     ul: UnOrderedList,
     ol: OrderedList,
@@ -47,7 +49,7 @@ const BlogLayout = (frontMatter) => ({ children }) => {
                 <Layout.SiteName />
                 <Layout.Content>
                     <Box variant="container">
-                        <Box position="relative" mb="75px" mt={["50px"]}>
+                        <Box position="relative" mb="50px">
                             <Image
                                 src={headerImagePath}
                                 width="100%"
@@ -73,6 +75,12 @@ const BlogLayout = (frontMatter) => ({ children }) => {
                                     </Box>
                                 </Flex>
                             </Box>
+                        </Box>
+                        <Box>
+                        <Text fontSize={12}>
+                                {frontMatter.date}&nbsp;-&nbsp;
+                                {frontMatter.readingTime}
+                            </Text>
                         </Box>
                         <Box>{children}</Box>
                     </Box>
