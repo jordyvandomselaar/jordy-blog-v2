@@ -45,7 +45,7 @@ const PostCard: FunctionComponent<PostCardProps> = ({
                 <Text fontSize={12}>
                     {date}&nbsp;-&nbsp;{readTime}
                 </Text>
-                <Text as="h3" variant="title">
+                <Text as="h3" variant="h3">
                     {title}
                 </Text>
                 <Text>{intro}</Text>
