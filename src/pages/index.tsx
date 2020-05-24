@@ -47,7 +47,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
                                         alt=""
                                     />
                                 </Box>
-                                <Box width={200} pl={2}>
+                                <Box width={275} pl={2}>
                                     <Text>
                                         <Text as="a" variant="link" href="https://twitter.com/Jordy_vD_" target="_blank">Jordy van Domselaar's</Text> blog. Feel free to send me a DM!
                                     </Text>
