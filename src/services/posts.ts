@@ -32,7 +32,7 @@ export const getAllBlogPosts = (): BlogPost[] => {
             title: fm.title ?? "",
             imageColor: fm.imageColor ?? "#FFF",
             image: fm.image ? require(`../${path}/${fm.image}`) : "",
-            intro: "",
+            intro: fm.intro,
             url: fm.__resourcePath.replace(/.+?pages/, '').replace(/\.mdx$/, '').replace(/\/index$/, ''),
             readTime: fm.readingTime,
             date: new Date(fm.date).toLocaleDateString(undefined, {
