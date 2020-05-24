@@ -37,7 +37,7 @@ const Home: FunctionComponent<HomeProps> = ({ blogPosts }) => {
             <Layout.Content>
                 <Box pt={3}>
                 <Flex flexDirection="column" alignItems={["center", "unset"]}>
-                    <Box py={3} px={3}>
+                    <Box py={3} px={3} width="100%">
                         <Box  pb={[5,6]}>
                             <Flex flexDirection="row" justifyContent="center" alignItems="center">
                                 <Box width={75}>
