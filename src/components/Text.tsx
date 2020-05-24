@@ -55,6 +55,7 @@ ${(props) =>
                 lineHeight: 1.5,
                 wordBreak: "break-word",
                 textDecoration: "none",
+                fontSize: '1.25rem'
             },
             link: {
                 fontFamily: "primary",
@@ -80,17 +81,17 @@ ${(props) =>
             h4: {
                 fontFamily: "title",
                 color: "title",
-                fontSize: "1.25rem",
+                fontSize: "1.45rem",
             },
             h5: {
                 fontFamily: "title",
                 color: "title",
-                fontSize: "1.1rem",
+                fontSize: "1.35rem",
             },
             h6: {
                 fontFamily: "title",
                 color: "title",
-                fontSize: "1.05rem",
+                fontSize: "1.25rem",
             },
             logo: {
                 fontFamily: "logo",
@@ -107,7 +108,7 @@ ${(props) =>
                     themeGet("colors.background")(props)
                 ),
                 lineHeight: 1.5,
-                fontSize: "1.1rem",
+                fontSize: "1.35rem",
             },
         },
     })}

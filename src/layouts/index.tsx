@@ -78,7 +78,7 @@ const BlogLayout = (frontMatter) => ({ children }) => {
                             </Box>
                         </Box>
                         <Box>
-                        <Text fontSize={12}>
+                        <Text fontSize="1rem">
                                 {frontMatter.date}&nbsp;-&nbsp;
                                 {frontMatter.readingTime}
                             </Text>

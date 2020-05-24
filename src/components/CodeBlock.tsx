@@ -31,7 +31,7 @@ const CodeBlock: FunctionComponent<CodeBlockProps> = ({
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre
                     className={className}
-                    style={{ ...style, padding: "20px", overflow: "auto", borderRadius: "10px"}}
+                    style={{ ...style, padding: "20px", overflow: "auto", borderRadius: "10px", fontSize: "1.25rem"}}
                 >
                     {tokens.map((line, i) => {
                         const lineProps = getLineProps({ line, key: i });
