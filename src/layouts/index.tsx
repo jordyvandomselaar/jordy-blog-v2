@@ -9,6 +9,7 @@ import { getRelativePathFromRootPath } from "../services/posts";
 import Image from "../components/Image";
 import Flex from "../components/Flex";
 import Tip from "../components/Tip";
+import BlockQuote from "../components/BlockQuote";
 import Layout from "./Layout";
 import Head from "next/head";
 
@@ -34,6 +35,7 @@ const components = {
     Image: Image,
     Link: Link,
     Tip: Tip,
+    blockquote: BlockQuote
 };
 
 const BlogLayout = (frontMatter) => ({ children }) => {

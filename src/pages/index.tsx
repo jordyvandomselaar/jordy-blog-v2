@@ -1,16 +1,15 @@
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import Link from "next/link";
 import React, { FunctionComponent } from "react";
+import Masonry from "react-masonry-component";
 import Box from "../components/Box";
 import Flex from "../components/Flex";
-import PostCard from "../components/PostCard";
-import Masonry from "react-masonry-component";
-import Text from "../components/Text";
 import Image from "../components/Image";
-import { GetStaticProps } from "next";
-import { BlogPost, getAllBlogPosts } from "../services/posts";
-import Link from "next/link";
+import PostCard from "../components/PostCard";
+import Text from "../components/Text";
 import Layout from "../layouts/Layout";
-import { ListItem, UnOrderedList } from "../components/List";
-import Head from "next/head";
+import { BlogPost, getAllBlogPosts } from "../services/posts";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const blogPosts = getAllBlogPosts();

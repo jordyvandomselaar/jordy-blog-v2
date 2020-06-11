@@ -1,11 +1,10 @@
+import Link from "next/link";
 import React, { FC } from "react";
+import { createGlobalStyle } from "styled-components";
+import Box from "../components/Box";
+import Flex from "../components/Flex";
 import Grid from "../components/Grid";
 import Text from "../components/Text";
-import Flex from "../components/Flex";
-import Box from "../components/Box";
-import Head from "next/head";
-import Link from "next/link";
-import styled, { createGlobalStyle } from "styled-components";
 
 export interface LayoutProps {}
 

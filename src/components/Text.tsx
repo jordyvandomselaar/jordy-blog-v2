@@ -1,22 +1,18 @@
+import { themeGet } from "@styled-system/theme-get";
+import { lighten } from "polished";
 import React, {
-    FunctionComponent,
     forwardRef,
-    ForwardRefExoticComponent,
+    ForwardRefExoticComponent
 } from "react";
 import styled, { css } from "styled-components";
 import {
     color,
     ColorProps,
-    typography,
+
+    system, typography,
     TypographyProps,
-    variant,
-    get,
-    createStyleFunction,
-    system,
-    RequiredTheme
+    variant
 } from "styled-system";
-import { darken, lighten } from "polished";
-import { themeGet } from "@styled-system/theme-get";
 
 const textDecoration = system({
     textDecoration: {
@@ -55,43 +51,65 @@ ${(props) =>
                 lineHeight: 1.5,
                 wordBreak: "break-word",
                 textDecoration: "none",
-                fontSize: '1.25rem'
+                fontSize: '1.25rem',
+                textRendering: "optimizelegibility"
             },
             link: {
                 fontFamily: "primary",
                 color: "link",
                 lineHeight: 1.5,
                 wordBreak: "break-word",
+                textRendering: "optimizelegibility"
             },
             h1: {
                 fontFamily: "title",
                 color: "title",
                 fontSize: "2.5rem",
+                fontWeight: "bold",
+                textRendering: "optimizelegibility"
             },
             h2: {
                 fontFamily: "title",
                 color: "title",
                 fontSize: "2rem",
+                fontWeight: "bold",
+                marginTop: "3.5rem",
+                textRendering: "optimizelegibility"
             },
             h3: {
                 fontFamily: "title",
                 color: "title",
                 fontSize: "1.5rem",
+                marginTop: "3.5rem",
+                fontWeight: "bold",
+                textRendering: "optimizelegibility"
             },
             h4: {
                 fontFamily: "title",
                 color: "title",
-                fontSize: "1.45rem",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                marginTop: "3.5rem",
+                fontVariant: "small-caps",
+                textRendering: "optimizelegibility"
             },
             h5: {
                 fontFamily: "title",
                 color: "title",
-                fontSize: "1.35rem",
+                fontSize: "1.5rem",
+                fontWeight: "normal",
+                marginTop: "3.5rem",
+                fontVariant: "small-caps",
+                textRendering: "optimizelegibility"
             },
             h6: {
                 fontFamily: "title",
                 color: "title",
-                fontSize: "1.25rem",
+                fontSize: "1.5rem",
+                fontWeight: "lighter",
+                marginTop: "3.5rem",
+                fontVariant: "small-caps",
+                textRendering: "optimizelegibility"
             },
             logo: {
                 fontFamily: "logo",
@@ -99,6 +117,7 @@ ${(props) =>
                 fontSize: "logo",
                 textDecoration: "none",
                 fontWeight: "bold",
+                textRendering: "optimizelegibility"
             },
             code: {
                 fontFamily: "monospace",
@@ -109,6 +128,7 @@ ${(props) =>
                 ),
                 lineHeight: 1.5,
                 fontSize: "1.35rem",
+                textRendering: "optimizelegibility"
             },
         },
     })}
