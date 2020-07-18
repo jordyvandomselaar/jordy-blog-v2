@@ -1,0 +1,128 @@
+---
+date: "2020-07-18"
+title: "What the filter? Let's have a look at array methods!"
+intro: "There's plenty of array methods available, let's have a look at some of them!"
+image: header-image.png
+imageColor: "#FFF48B"
+imageCopyright: "Jordy van Domselaar"
+categories:
+  - JavaScript
+---
+
+## Table of Contents
+
+## Intro
+
+## array.filter()
+
+```js
+const arr = [1, 2, 3];
+
+arr.filter(itemInArray => itemInArray > 2); // [3]
+```
+
+## array.find()
+
+```js
+const arr = [1, 2, 3];
+
+arr.find(itemInArray => itemInArray > 2); // 3
+```
+
+## array.map()
+
+```js
+const arr = [1, 2, 3];
+
+arr.map(itemInArray => itemInArray * 2); // [2, 4, 6]
+```
+
+## array.reduce()
+
+```js
+const arr = [1, 2, 3];
+
+arr.reduce(
+    (result, itemInArray) => result = result + itemInArray,
+    0
+); // 6
+```
+
+## array.push()
+
+```js
+const arr = [1, 2, 3];
+
+arr.push(10); // 4 because it returns the length of the array after pushing the new item.
+
+// arr now equals [1, 2, 3, 10].
+```
+
+## array.concat()
+
+```js
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+
+    arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
+```
+
+## array.shift()
+
+```js
+const arr = [1, 2, 3];
+
+arr.shift(); // 1, returns the first value
+
+// arr now equals [2, 3].
+```
+
+## array.some()
+
+```js
+const arr = [1, 2, 3];
+
+arr.some(itemInArray => itemInArray > 2); // true
+```
+
+## array.every()
+
+```js
+const arr = [1, 2, 3];
+
+arr.every(itemInArray => itemInArray > 2); // false
+```
+
+## array.flat()
+
+```js
+const arr = [
+    [1, 2],
+    [3],
+    [4]
+]
+
+arr.flat() // [1, 2, 3, 4]
+```
+
+## array.forEach()
+
+```js
+const arr = [1, 2, 3];
+
+arr.forEach(itemInArray => {
+    // Do something with each item in array
+});
+```
+
+## array.join()
+
+```js
+const arr = ["What", "the", "filter?"];
+
+arr.join("."); // "What.the.filter?"
+```
+
+## array.entries()
+
+**What does this even do lmao**
