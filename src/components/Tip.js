@@ -18,7 +18,18 @@ const Wrapper = styled.div`
     }
 `;
 
-const Tip = ({title = "Tip", children,  ...props}) => {
+const Tip = ({variant = "tip", children,  ...props}) => {
+    const titleMap = {
+        tip: "Tip",
+        note: "Note"
+    }
+
+    const title = titleMap[variant];
+
+    if(!title) {
+        throw new Error(`No title found for ${variant}!`);
+    }
+
     return (
         <Wrapper {...props}>
           <Text as="strong">{title}</Text>

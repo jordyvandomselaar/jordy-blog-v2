@@ -17,7 +17,7 @@ Every now and then, someone asks what `reduce()` is all about or what's going on
 
 ## array.filter()
 
-Filter through an `array` and `return` a new array with just the items that you want! Lets say you start with an `array` containing the numbers `1`, `2`, and `3` and you only want the items that are bigger than `2`, you would do this:
+Filter through an `array` and `return` a new array with just the items that you want! Lets say you start with an `array` containing the numbers `1`, `2`, and `3` and you only want the items that are bigger than `2`, you'd do this:
 
 ```js
 const arr = [1, 2, 3, 4];
@@ -29,7 +29,7 @@ Now you have an `array` that just contains the number `3`: `[3, 4]`.
 
 ## array.find()
 
-Find is the same as `filter()` but it stops executing as soon as it has found the item you need. It `returns` just the item instead of wrapping it in an `array`. If you want the first item that is bigger than `2`, you would do this:
+Find is the same as `filter()` but it stops executing as soon as it has found the item you need. It `returns` just the item instead of wrapping it in an `array`. If you want the first item that is bigger than `2`, you'd do this:
 
 ```js
 const arr = [1, 2, 3, 4];
@@ -41,7 +41,7 @@ Now you just have `3`!
 
 ## array.map()
 
-Runs a `callback` on every item in an `array` and `returns` a new `array`. If you want every item to be doubled, you would do this:
+Runs a `callback` on every item in an `array` and `returns` a new `array`. If you want every item to be doubled, you'd do this:
 
 ```js
 const arr = [1, 2, 3];
@@ -51,54 +51,203 @@ const newArray = arr.map(itemInArray => itemInArray * 2); // [2, 4, 6]
 
 `newArray` is now an array with `[2, 4, 6]`!
 
-
 ## array.reduce()
+
+I get asked the most about `reduce()` so I'll try to add multiple examples for this one. If you have any questions, [Send me a DM!](https://twitter.com/Jordy_vD_)
+
+Reduce is a great way to `reduce` 😉️ an `array` of values into one value. `reduce()` takes 2 arguments; the first `argument` is a `callback` that takes the current result as the first `argument` and the current item in the `array` as the second. The second `argument` to `reduce()` is your starting result.
+
+Let's say you have an `array` of values that you'd like to add up into one value, you could do it like this:
 
 ```js
 const arr = [1, 2, 3];
 
 arr.reduce(
-    (result, itemInArray) => result = result + itemInArray,
+    (result, itemInArray) => {
+        return result + itemInArray
+    },
     0
 ); // 6
 ```
 
+Now you have the value `6`!
+
+As you can see, we start with the value `0`. We then loop through `arr` and add every item in `arr` to the value. The `return` value of the `callback` is used in the next iteration. If you were to `return` `2` in your callback, the next loop's `result` would be `2`.
+
+You can `reduce` an `array` into any value you'd like. It's not limited to numbers:
+
+```js
+const arr = ["This", "is", "a", "string"];
+
+const concatenatedString = arr.reduce( //  This is a string
+    (result, itemInArray) => {
+        return `${result} ${itemInArray}`
+    },
+    ""
+);
+```
+
+`concatenatedString` is now a variable with `This is a string`!
+
 ## array.push()
+
+Append a value to the end of an `array`.
+
+<Tip variant="note">
+
+`push()` mutates your `array` in place! this means the input array is changed without copying it.
+
+`push()` returns the `length` of the `array` after appending the value. It does not `return` a new `array`!
+
+</Tip>
+
+If you'd like to append the number `10`, you'd do it like this:
 
 ```js
 const arr = [1, 2, 3];
 
 arr.push(10); // 4 because it returns the length of the array after pushing the new item.
 
-// arr now equals [1, 2, 3, 10].
 ```
 
+`arr` is now an `array` with `[1, 2, 3, 4]`!
+
 ## array.concat()
+
+Concatenate multiple `arrays` into one `array`:
 
 ```js
     const arr1 = [1, 2, 3];
     const arr2 = [4, 5, 6];
 
-    arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
+   const concatenatedArray = arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
 ```
+
+`concatenatedArray` is now an `array` with `[1, 2, 3, 4, 5, 6]`!
+
+<Tip>
+
+You can also use the spread operator (`...`) if you prefer. you'd do it like this:
+
+```js
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const concatenatedArray = [...ar1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+```
+
+</Tip>
 
 ## array.shift()
 
+`returns` the first value in an `array` and then removes it from that `array`.
+
+<Tip variant="note">
+
+`shift()` mutates your `array` in place! this means the input array is changed without copying it.
+
+</Tip>
+
 ```js
 const arr = [1, 2, 3];
 
-arr.shift(); // 1, returns the first value
+const value = arr.shift(); // 1, returns the first value
 
-// arr now equals [2, 3].
 ```
+
+`arr` now equals `[2, 3]`, `value` equals `1`.
+
+<Tip>
+
+If you just want to remove the first value in an array, you can also use [array.splice()](#arraysplice)
+
+</Tip>
+
+## array.splice()
+
+Removes items from an `array` and optionally adds new items as well. `returns` the removed items and mutates the `array` in place.
+
+<Tip>
+
+`splice()` mutates the array in place and does not copy the original array.
+
+</Tip>
+
+If you'd like to remove the first item from an `array`, you'd do it like this:
+
+```js
+const arr = [1, 2, 3];
+
+const result = arr.splice(0, 1);
+```
+
+`result` is now `[1]` because `1` is the number that was removed from `arr` and `arr` is now `[2, 3]` because `splice()` mutates the original `arr`. You can also add items to an `array` at a specified `index`:
+
+```js
+const arr = [1, 2, 3];
+
+const result = arr.splice(2, 1, 4, 5);
+```
+
+`arr` is now `[1, 2, 4, 5]` and result is `[3]` because `3` is the value that was removed.
+
+## array.slice()
+
+Removes items in an `array` and `returns` a new `array` with the remaining items. `slice()` cannot add items to an array.
+
+If you'd like to remove the first item from an `array`, you'd do it like this:
+
+```js
+const arr = [1, 2, 3];
+
+const result = arr.slice(0, 1);
+```
+
+`arr` is still `[1, 2, 3]` because `slice()` creates a copy of your `array` before altering it. `result` is `[1]` because `1` is the number that was removed from `arr`.
+
+<Tip>
+
+You can use `slice()` to  create a copy of an array like this:
+
+```js
+const arr = [1, 2, 3];
+
+const copy = arr.slice();
+```
+
+Because you didn't provide any arguments, nothing was removed and `slice()` just `returned` a copy. You can also use the spread operator to copy an `array`:
+
+```js
+const arr = [1, 2, 3];
+
+const copy = [...arr];
+```
+
+</Tip>
 
 ## array.some()
 
+`returns` `true` if at least one value in the provided `array` matches your expression. If you'd like to know if your `array` contains the number `2`, you'd do it like this:
+
 ```js
 const arr = [1, 2, 3];
 
-arr.some(itemInArray => itemInArray > 2); // true
+const result = arr.some(itemInArray => itemInArray === 2); // true
 ```
+
+`result` is `true` because `arr` does contain the number `2`.
+
+<Tip>
+
+`array.some()` is a neat replacement for situations where you'd `filter()` through an `array` and check if the `length` of the resulting `array` is higher than `0` to determine if a value exists:
+
+```js
+const arr = [1, 2, 3];
+
+const result = arr.filter(itemInArray => itemInArray === 2).length > 0; // true
+```
+
+</Tip>
 
 ## array.every()
 
@@ -141,3 +290,5 @@ arr.join("."); // "What.the.filter?"
 ## array.entries()
 
 **What does this even do lmao**
+
+
