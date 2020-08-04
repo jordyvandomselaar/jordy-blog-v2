@@ -13,13 +13,19 @@ categories:
 
 ## Intro
 
+Every now and then, someone asks what `reduce()` is all about or what's going on with `map()`. This isn't so much a blog post as it is a cheat sheet. If you ever need to know something about a specific `array` method, you can find it here!
+
 ## array.filter()
+
+Filter through an `array` and `return` a new array with just the items that you want! Lets say you start with an `array` containing the numbers `1`, `2`, and `3` and you only want the items that are bigger than `2`, you would do this:
 
 ```js
 const arr = [1, 2, 3];
 
 arr.filter(itemInArray => itemInArray > 2); // [3]
 ```
+
+now you have an `array` that just contains the number `3`: `[3]`.
 
 ## array.find()
 
