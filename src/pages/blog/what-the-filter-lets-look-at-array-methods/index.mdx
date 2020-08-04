@@ -20,28 +20,37 @@ Every now and then, someone asks what `reduce()` is all about or what's going on
 Filter through an `array` and `return` a new array with just the items that you want! Lets say you start with an `array` containing the numbers `1`, `2`, and `3` and you only want the items that are bigger than `2`, you would do this:
 
 ```js
-const arr = [1, 2, 3];
+const arr = [1, 2, 3, 4];
 
-arr.filter(itemInArray => itemInArray > 2); // [3]
+arr.filter(itemInArray => itemInArray > 2); // [3, 4]
 ```
 
-now you have an `array` that just contains the number `3`: `[3]`.
+Now you have an `array` that just contains the number `3`: `[3, 4]`.
 
 ## array.find()
 
+Find is the same as `filter()` but it stops executing as soon as it has found the item you need. It `returns` just the item instead of wrapping it in an `array`. If you want the first item that is bigger than `2`, you would do this:
+
 ```js
-const arr = [1, 2, 3];
+const arr = [1, 2, 3, 4];
 
 arr.find(itemInArray => itemInArray > 2); // 3
 ```
 
+Now you just have `3`!
+
 ## array.map()
+
+Runs a `callback` on every item in an `array` and `returns` a new `array`. If you want every item to be doubled, you would do this:
 
 ```js
 const arr = [1, 2, 3];
 
-arr.map(itemInArray => itemInArray * 2); // [2, 4, 6]
+const newArray = arr.map(itemInArray => itemInArray * 2); // [2, 4, 6]
 ```
+
+`newArray` is now an array with `[2, 4, 6]`!
+
 
 ## array.reduce()
 
